@@ -5,16 +5,16 @@ using namespace std;
 #pragma once
 class user
 {
-private:
+protected:
 	static int nextId;
 	int id;
 	string name;
 	string email;
 	string password;
-
-
-public:
 	user(string name, string email, string password);
+
+
+
 
 };
 

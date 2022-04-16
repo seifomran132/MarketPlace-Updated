@@ -1,15 +1,20 @@
 #pragma once
 #include <string>
 #include <iostream>
+#include <vector>
+#include "user.h"
+#include "seller.h"
 using namespace std;
-class auth
-{
 
-public:
-	static void userRegister();
-	static void userLogin(string email, string password);
-	static void userLogout();
 
+struct userType {
+	string name;
+	string email;
+	string password;
 
 };
+
+void userRegister(int regType, vector<seller>& sellers, vector<user>& customer);
+void userLogin(int regType, vector<seller>& sellers, vector<user>& customer);
+void userLogout();
 

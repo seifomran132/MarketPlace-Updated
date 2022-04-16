@@ -4,9 +4,11 @@
 
 using namespace std;
 
+vector<products> product::prod;
 
 product::product() {
 
+	/*
 	do {
 		cout << "TO add press : 1 \n TO delete press : 2 \n TO search press :3  \n";
 		cin >> choose_operation;
@@ -26,10 +28,12 @@ product::product() {
 		cin >> loop_operation;
 
 	} while (loop_operation == 'y' || loop_operation == 'Y');
+	*/
 }
 
-void product::add_products() {
+void product::add_products(products p) {
 
+	/* DONT NEED THIS
 	cout << "\n enter the id of product :\t";
 		cin >> p.id;
 	cout << "\n enter the name of product :\t";
@@ -42,7 +46,9 @@ void product::add_products() {
 		cin >> p.quantity;
 
 	//must taken from loggin  information i but it as default zero 
-	p.seller_id = 0;
+	p.seller_id = sellerID;
+	*/
+	
 
 	// push the product to the datastructure in this line  
 	prod.push_back(p);
