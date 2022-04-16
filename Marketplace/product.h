@@ -21,17 +21,13 @@ class product
 	private:
 		queue <products> searched_que;
 		products p;
-		int choose_operation;
-		char loop_operation;
+		
 	public :
 		static vector<products> prod;
 		product();
 		void add_products(products p);
-		void delete_products();
-		void search_products();
-
-
-		
+		void delete_products(int deleted_id);
+		void search_products(string searched_category);
 
 };
 
