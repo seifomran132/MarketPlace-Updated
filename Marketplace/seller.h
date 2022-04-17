@@ -5,10 +5,11 @@
 #pragma once
 
 
-class seller :user
+class seller : public user
 {
 
 public:
+	
 	seller(string name, string email, string password);
 	string test = "Hello " + name;
 	product pro;
@@ -17,7 +18,6 @@ public:
 	products addingProduct();
 	void deletProduct();
 	void UpdateProduct(int idToBeUpdated);
-	string getEmail();
-	string getPassword();
+	
 
 };

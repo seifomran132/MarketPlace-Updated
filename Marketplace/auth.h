@@ -14,7 +14,10 @@ struct userType {
 
 };
 
-void userRegister(int regType, vector<seller>& sellers, vector<user>& customer);
-void userLogin(int regType, vector<seller>& sellers, vector<user>& customer);
+user customerRegister();
+seller sellerRegister(vector<seller>& sellers);
+user customerLogin();
+seller sellerLogin(vector<seller>& sellers);
+bool emailValidation(string email);
 void userLogout();
 

@@ -10,14 +10,7 @@ seller::seller(string name, string email, string password)
 {
 
 }
-string seller::getEmail()
-{
-	return email;
-}
-string seller::getPassword()
-{
-	return password;
-}
+
 products seller::addingProduct()
 {
 

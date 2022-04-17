@@ -11,8 +11,11 @@ protected:
 	string name;
 	string email;
 	string password;
+	user();
 	user(string name, string email, string password);
-
+public:
+	string getEmail();
+	string getPassword();
 
 
 
