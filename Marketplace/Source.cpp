@@ -9,9 +9,13 @@ using namespace std;
 
 int main() {
 
+	seller add = seller("saif","test","tsets");
+	add.addingProduct();
+	add.UpdateProduct(0);
+	add.deletProduct();
 	
 	vector<seller> sellers;
-	vector<user> customers;
+	/*vector<user> customers;
 
 	int enterChois;
 	do {
@@ -40,7 +44,7 @@ int main() {
 			break;
 		}
 		
-	} while (true);
+	} while (true);*/
 
 
 	cout << sellers.capacity() << endl;

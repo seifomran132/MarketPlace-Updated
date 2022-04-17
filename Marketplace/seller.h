@@ -11,7 +11,13 @@ class seller :user
 public:
 	seller(string name, string email, string password);
 	string test = "Hello " + name;
-	product por;
+	product pro;
+	product proloop;
 	products sel;
 	products addingProduct();
+	void deletProduct();
+	void UpdateProduct(int idToBeUpdated);
+	string getEmail();
+	string getPassword();
+
 };
