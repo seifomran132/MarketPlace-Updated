@@ -2,7 +2,9 @@
 #include <string>
 #include <vector>
 #include "seller.h"
-#include "auth.h"
+//#include "auth.h"
+#include "auth.cpp"
+
 
 using namespace std;
 
@@ -14,8 +16,6 @@ int main() {
 
 	seller loggedSeller = seller("","","");
 
-	
-
 	int enterChois;
 	do {
 		cout << "Enter 1 for Register\nEnter 2 for Login\n" << endl;
@@ -26,14 +26,15 @@ int main() {
 			cin >> enterChois;
 
 			if (enterChois == 1) {
-				sellerRegister(sellers);
-				
+				//sellerRegister(sellers);
+				user s = userRegister<user>(customers);
 			}
 			if (enterChois == 2) {
-				loggedSeller = sellerRegister(sellers);
-				if (loggedSeller.getEmail() != "") {
-					cout << loggedSeller.getEmail()<<endl;
-				}
+				loggedSeller = userRegister<seller>(sellers);
+
+				//loggedSeller = sellerRegister(sellers);
+
+				
 
 			}
 			else if (enterChois == 3) {
@@ -44,8 +45,14 @@ int main() {
 			}
 		}
 		else if (enterChois == 2) {
-			seller s1 = sellerLogin(sellers);
-			cout << s1.getEmail() << endl;
+			seller s1 = userLogin(sellers);
+			if (s1.getEmail() != "") {
+				cout << "**********Login Success**********" << endl;
+			}
+			else {
+				cout << "**********Login Failed**********" << endl;
+
+			}
 		}
 		else {
 			break;
