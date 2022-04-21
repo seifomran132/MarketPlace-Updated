@@ -30,6 +30,9 @@
     <ClCompile Include="seller.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="cart.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="auth.h">
@@ -42,6 +45,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="seller.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cart.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
