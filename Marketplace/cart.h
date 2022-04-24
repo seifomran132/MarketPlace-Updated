@@ -8,7 +8,7 @@ public:
 	cart(void);
 	void addProdect(product);
 	void displayTotalPrice();
-	void removeProduct(product);
+	void removeProduct(product p);
 	void updateQuantity();
 	~cart(void);
 };

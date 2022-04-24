@@ -10,5 +10,10 @@ cart::cart(void)
 
 void cart::addProdect(product p)
 {
+	
+}
 
+void cart::removeProduct(product p) {
+
+	
 }
