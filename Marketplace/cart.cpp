@@ -10,5 +10,5 @@ cart::cart(void)
 
 void cart::addProdect(product p)
 {
-	
+
 }

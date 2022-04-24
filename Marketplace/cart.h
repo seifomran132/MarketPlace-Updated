@@ -1,9 +1,9 @@
 #pragma once
 #include <vector>
-#include "product.cpp"
+#include "product.h"
 class cart {
 	float totalPrice;
-public : 
+public:
 	vector <product> v;
 	cart(void);
 	void addProdect(product);
@@ -11,5 +11,4 @@ public :
 	void removeProduct(product);
 	void updateQuantity();
 	~cart(void);
-
 };
