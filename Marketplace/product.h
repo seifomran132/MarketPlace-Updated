@@ -27,7 +27,7 @@ class product
 		product();
 		void add_products(product_type p);
 		void delete_products(int deleted_id);
-		void search_products(string searched_category);
+		void searchByCategory(string searched_category);
 
 };
 

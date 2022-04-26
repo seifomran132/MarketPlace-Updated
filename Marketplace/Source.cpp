@@ -2,15 +2,15 @@
 #include <string>
 #include <vector>
 #include "seller.h"
-//#include "auth.h"
-#include "auth.cpp"
-
+#include "auth.h"
+#include "login.cpp"
+#include "Customer.h"
 
 using namespace std;
 
 
 vector<seller> sellers;
-vector<user> customers;
+vector<Customer> customers;
 
 int main() {
 
@@ -26,17 +26,13 @@ int main() {
 			cin >> enterChois;
 
 			if (enterChois == 1) {
-				//sellerRegister(sellers);
-				user s = userRegister<user>(customers);
+				Customer s = customerRegister(customers);
 			}
-			if (enterChois == 2) {
-				loggedSeller = userRegister<seller>(sellers);
-
-				//loggedSeller = sellerRegister(sellers);
-
-				
+			else if (enterChois == 2) {
+				loggedSeller = sellerRegister(sellers);				
 
 			}
+
 			else if (enterChois == 3) {
 				main();
 			}
@@ -45,14 +41,31 @@ int main() {
 			}
 		}
 		else if (enterChois == 2) {
-			seller s1 = userLogin(sellers);
-			if (s1.getEmail() != "") {
-				cout << "**********Login Success**********" << endl;
+			cout << "Do you want to login as Customer or Seller\nEnter 1 for Customer\nEnter 2 for Seller\nEnter 3 for back" << endl;
+			cin >> enterChois;
+
+			if (enterChois == 2) {
+				Customer c1 = userLogin(customers);
+				if (c1.getEmail() != "") {
+					cout << "**********Login Success**********" << endl;
+				}
+				else {
+					cout << "**********Login Failed**********" << endl;
+
+				}
 			}
 			else {
-				cout << "**********Login Failed**********" << endl;
+				seller s1 = userLogin(sellers);
+				if (s1.getEmail() != "") {
+					cout << "**********Login Success**********" << endl;
+				}
+				else {
+					cout << "**********Login Failed**********" << endl;
 
+				}
 			}
+
+			
 		}
 		else {
 			break;

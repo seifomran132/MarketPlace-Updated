@@ -41,7 +41,7 @@ void product::delete_products(int deleted_id) {
 }
 
 
-void product::search_products(string searched_category) {
+void product::searchByCategory(string searched_category) {
 	
 	
 
