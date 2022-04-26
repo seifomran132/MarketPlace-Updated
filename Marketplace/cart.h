@@ -4,11 +4,11 @@
 class cart {
 	float totalPrice;
 public:
-	vector <product> v;
+	vector <product_type> prod;
 	cart(void);
-	void addProdect(product);
+	void addToCart(product_type);
 	void displayTotalPrice();
-	void removeProduct(product p);
+	bool removeFromCart(int removed_id);
 	void updateQuantity();
-	~cart(void);
+	
 };

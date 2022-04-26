@@ -4,13 +4,13 @@
 
 using namespace std;
 
-vector<products> product::prod;
+vector<product_type> product::prod;
 
 product::product() {
 
 }
 
-void product::add_products(products p) {
+void product::add_products(product_type p) {
 
 	prod.push_back(p);
 }

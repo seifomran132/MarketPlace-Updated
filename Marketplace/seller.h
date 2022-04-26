@@ -14,8 +14,8 @@ public:
 	string test = "Hello " + name;
 	product pro;
 	product proloop;
-	products sel;
-	products addingProduct();
+	product_type sel;
+	product_type addingProduct();
 	void deletProduct();
 	void UpdateProduct(int idToBeUpdated);
 	

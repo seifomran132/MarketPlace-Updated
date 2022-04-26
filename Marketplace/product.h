@@ -6,7 +6,7 @@ using namespace std;
 
 #pragma once
 
-struct products {
+struct product_type {
 	int id;
 	string name;
 	double price;
@@ -19,13 +19,13 @@ struct products {
 class product
 {
 	private:
-		queue <products> searched_que;
-		products p;
+		queue <product_type> searched_que;
+		product_type p;
 		
 	public :
-		static vector<products> prod;
+		static vector<product_type> prod;
 		product();
-		void add_products(products p);
+		void add_products(product_type p);
 		void delete_products(int deleted_id);
 		void search_products(string searched_category);
 

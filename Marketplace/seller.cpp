@@ -11,7 +11,7 @@ seller::seller(string name, string email, string password)
 
 }
 
-products seller::addingProduct()
+product_type seller::addingProduct()
 {
 
 	sel.seller_id = this->id;
