@@ -9,6 +9,7 @@
 #include "cart.h"
 #include "product.h"
 #include <string>
+#include "order.h"
 using namespace std;
 
 class Customer :public user
@@ -17,6 +18,9 @@ class Customer :public user
 	cart mycart;
 	string phone;
 	product myProduct;
+	vector<order> myOrders;
+
+
 public:
 	Customer(string name, string email, string password, string address, string phone);
 	void browseByCategory();

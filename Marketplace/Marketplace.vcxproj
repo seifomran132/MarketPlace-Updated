@@ -143,6 +143,7 @@
     <ClCompile Include="cart.cpp" />
     <ClCompile Include="Customer.cpp" />
     <ClCompile Include="login.cpp" />
+    <ClCompile Include="order.cpp" />
     <ClCompile Include="product.cpp" />
     <ClCompile Include="seller.cpp" />
     <ClCompile Include="Source.cpp" />
@@ -153,6 +154,7 @@
     <ClInclude Include="cart.h" />
     <ClInclude Include="Customer.h" />
     <ClInclude Include="login.h" />
+    <ClInclude Include="order.h" />
     <ClInclude Include="product.h" />
     <ClInclude Include="seller.h" />
     <ClInclude Include="user.h" />
