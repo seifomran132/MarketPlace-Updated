@@ -57,3 +57,17 @@ void product::searchByCategory(string searched_category) {
 		 cout << endl;
 	}
 }
+
+void product::searchByName(string searched_name) {
+	int x = 0;
+	while (!prod.empty()) {
+		if (prod[x].name.compare(searched_name) == 0) {
+			searched_que.push(prod[x]);
+		}
+	}
+
+	while (!searched_que.empty()) {
+		searched_que.pop();
+		cout << endl;
+	}
+}

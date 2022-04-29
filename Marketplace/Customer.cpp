@@ -15,7 +15,7 @@ void Customer::browseByName() {
 	cout << "Enter Product Name :" << endl;
 	string searchName;
 	cin >> searchName;
-
+	myProduct.searchByName(searchName);
 
 }
 
