@@ -142,6 +142,7 @@
     <ClCompile Include="auth.cpp" />
     <ClCompile Include="cart.cpp" />
     <ClCompile Include="Customer.cpp" />
+    <ClCompile Include="Globals.cpp" />
     <ClCompile Include="login.cpp" />
     <ClCompile Include="order.cpp" />
     <ClCompile Include="product.cpp" />
@@ -153,6 +154,8 @@
     <ClInclude Include="auth.h" />
     <ClInclude Include="cart.h" />
     <ClInclude Include="Customer.h" />
+    <ClInclude Include="GLOBAL.h" />
+    <ClInclude Include="Globals.h" />
     <ClInclude Include="login.h" />
     <ClInclude Include="order.h" />
     <ClInclude Include="product.h" />

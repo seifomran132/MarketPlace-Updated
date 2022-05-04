@@ -1,23 +1,22 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "seller.h"
 #include "auth.h"
 #include "login.cpp"
+#include "Globals.h";
 #include "Customer.h"
 
 using namespace std;
 
+static vector<Customer> customers;
 
-vector<seller> sellers;
-vector<Customer> customers;
 
 int main() {
 
 	seller loggedSeller = seller("","","");
 
 	int enterChois;
-	do {
+	/*do {
 		cout << "Enter 1 for Register\nEnter 2 for Login\n" << endl;
 		cin >> enterChois;
 
@@ -30,6 +29,7 @@ int main() {
 			}
 			else if (enterChois == 2) {
 				loggedSeller = sellerRegister(sellers);				
+				
 
 			}
 
@@ -71,10 +71,27 @@ int main() {
 			break;
 		}
 		
-	} while (true);
+	} while (true);*/
+
+	seller newSeller = seller("seif", "s@.", "s");
+
+	Globals global = Globals();
+
+	global.addSeller(newSeller);
+
+	cout << "Sellers: " << global.sellers.size() << endl;
+	cout << &global.sellers << endl;
+
+	product_type createdProduct = newSeller.addingProduct();
+	Customer newCustomer = Customer("ss", "ss@.", "ss", "Cairo", "010");
+	newCustomer.addProductToCart(createdProduct);
+	cout<< "Cart: " << newCustomer.mycart.prod.size() << endl;
+	newCustomer.confirmOrder();
+
+	cout << "from main " << newSeller.orders.size() << endl;
+	cout << "from main " << &newSeller.orders << endl;
 
 
-	cout << sellers.capacity() << endl;
 
 
 	return 0;

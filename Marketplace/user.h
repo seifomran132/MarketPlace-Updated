@@ -1,8 +1,8 @@
+#pragma once
 #include <string>
 #include <iostream>
 using namespace std;
 
-#pragma once
 class user
 {
 protected:
@@ -16,7 +16,7 @@ protected:
 public:
 	string getEmail();
 	string getPassword();
-
+	int getID();
 
 
 };

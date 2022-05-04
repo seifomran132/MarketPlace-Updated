@@ -1,10 +1,10 @@
+#pragma once
 #include <string>
 #include <vector>
 #include <queue>
 
 using namespace std;
 
-#pragma once
 
 struct product_type {
 	int id;

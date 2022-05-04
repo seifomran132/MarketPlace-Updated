@@ -18,3 +18,7 @@ string user::getPassword()
 {
 	return password;
 }
+int user::getID()
+{
+	return id;
+}

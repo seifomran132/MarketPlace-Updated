@@ -2,32 +2,42 @@
 #include <string>
 #include <iostream>
 #include <vector>
-#include "product.h"
-
+#include "seller.h"
+#include "Globals.h"
 using namespace std;
 
-struct CustomerDetails {
-	string name;
-	string address;
-	string phone;
-};
+
 
 class order
 {
-	CustomerDetails customerDetails;
-	vector<product> *orderProducts;
+	OrderDetails orderDetails;
+	vector<product_type> orderProducts;
+	Globals global = Globals();
+
 
  public:	
-	order(string name, string address, string phone, vector<product> products[]) {
-		customerDetails.name = name;
-		customerDetails.address = address;
-		customerDetails.phone = phone;
+	order(string name, string address, string phone, vector<product_type> products) {
+		
+
+		orderDetails.name = name;
+		orderDetails.address = address;
+		orderDetails.phone = phone;
 		orderProducts = products;
+		cout << "Start Assign product" << endl;
+		cout << "Cart " << products.size() << endl;
+
+		for (int i = 0; i < products.size(); i++) {
+			cout << "Inside loop from order con" << endl;
+			assignOrder(products[i]);
+		}
 	}
 
-	CustomerDetails getDetails() {
-		return this->customerDetails;
+	OrderDetails getDetails() {
+		return this->orderDetails;
 	}
+
+	seller getSeller(int id);
+	void assignOrder(product_type p);
 
 };
 
