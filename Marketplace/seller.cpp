@@ -11,7 +11,6 @@ seller::seller(string name, string email, string password)
 {
 
 }
-
 product_type seller::addingProduct()
 {
 
@@ -38,11 +37,9 @@ product_type seller::addingProduct()
 }
  void seller::UpdateProduct(int idToBeUpdated)
  {
-	 cout << "welcome in updating";
-	 int x;
-	 
-	 
-		 for (int count = 0; count <= proloop.prod.capacity()-1; count++)
+	cout << "welcome in updating....";
+	int x;
+	for (int count = 0; count <= proloop.prod.capacity()-1; count++)
 		 {
 
 
@@ -102,5 +99,4 @@ product_type seller::addingProduct()
 				 cout << "sorry product not found";
 			 }
 		 }
-	 
 }
