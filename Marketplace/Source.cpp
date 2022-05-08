@@ -89,8 +89,11 @@ int main() {
 	newCustomer.confirmOrder();
 
 	cout << "from main " << newSeller.orders.size() << endl;
-	cout << "from main " << &newSeller.orders << endl;
+	cout << "from main " << newSeller.orders.front().name << endl;
 
+	for (auto o : newSeller.orders) {
+		cout << "Order Name " << o.products[0].name << endl;
+	}
 
 
 

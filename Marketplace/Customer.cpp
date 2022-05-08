@@ -32,4 +32,6 @@ void Customer::viewCart()
 void Customer::confirmOrder() {
 	cout << "Cart from customer: " << mycart.prod.size() << endl;
 	order newOrder = order(this->name, this->address, this->phone, this->mycart.prod);
+	cout << "Cart Products from customer: " << newOrder.orderProducts.size() << endl;
+
 }

@@ -1,6 +1,6 @@
 #pragma once
 #include<iostream>
-#include<vector>
+#include<deque>
 #include "user.h"
 #include "product.h"
 
@@ -19,7 +19,7 @@ public:
 	seller(string name, string email, string password);
 	
 	string test = "Hello " + name;
-	static vector<OrderDetails> orders;
+	static deque<OrderDetails> orders;
 	product pro;
 	product proloop;
 	product_type sel;

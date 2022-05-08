@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-vector<OrderDetails> seller::orders;
+deque<OrderDetails> seller::orders;
 
 
 seller::seller(string name, string email, string password)

@@ -11,20 +11,20 @@ using namespace std;
 class order
 {
 	OrderDetails orderDetails;
-	vector<product_type> orderProducts;
 	Globals global = Globals();
 
 
  public:	
+	vector<product_type> orderProducts;
 	order(string name, string address, string phone, vector<product_type> products) {
 		
 
 		orderDetails.name = name;
 		orderDetails.address = address;
 		orderDetails.phone = phone;
-		orderProducts = products;
+		orderDetails.products = products;
 		cout << "Start Assign product" << endl;
-		cout << "Cart " << products.size() << endl;
+		cout << "Cart " << products[0].name << endl;
 
 		for (int i = 0; i < products.size(); i++) {
 			cout << "Inside loop from order con" << endl;
