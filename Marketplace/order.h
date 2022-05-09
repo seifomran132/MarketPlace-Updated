@@ -26,7 +26,7 @@ class order
 		cout << "Start Assign product" << endl;
 		cout << "Cart " << products[0].name << endl;
 
-		for (int i = 0; i < products.size(); i++) {
+		for (int i = 0; i <= products.size(); i++) {
 			cout << "Inside loop from order con" << endl;
 			assignOrder(products[i]);
 		}

@@ -3,9 +3,8 @@
 #include <iostream>
 using namespace std;
 
+
 deque<OrderDetails> seller::orders;
-
-
 seller::seller(string name, string email, string password)
 	:user(name, email, password)
 {
@@ -100,3 +99,18 @@ product_type seller::addingProduct()
 			 }
 		 }
 }
+ void seller::showOrder(orders)
+ {
+	 for (int i; i < orders.size(); i++)
+	 {
+		 cout << "customer name :" << orders[i].name << endl;
+		 cout << "customer adress :" << orders[i].address << endl;
+		 cout << "customer phone :" << orders[i].phone << endl;
+		 cout << "product ID :" << orders[i].products[i].id << endl;
+		 cout << "product name :" << orders[i].products[i].name << endl;
+		 cout << "product category :" << orders[i].products[i].category << endl;
+		 cout << "product price :" << orders[i].products[i].price << endl;
+		 cout << "product quentity :" << orders[i].products[i].quantity << endl;
+		 cout << "product Seller Id :" << orders[i].products[i].seller_id << endl;
+	 }
+ }

@@ -94,8 +94,6 @@ int main() {
 	for (auto o : newSeller.orders) {
 		cout << "Order Name " << o.products[0].name << endl;
 	}
-
-
-
+	newSeller.showOrder();
 	return 0;
 }

@@ -26,6 +26,6 @@ public:
 	product_type addingProduct();
 	void deletProduct();
 	void UpdateProduct(int idToBeUpdated);
-	
+	void showOrder();
 
 };
