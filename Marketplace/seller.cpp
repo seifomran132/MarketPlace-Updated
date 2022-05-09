@@ -99,9 +99,9 @@ product_type seller::addingProduct()
 			 }
 		 }
 }
- void seller::showOrder(orders)
+ void seller::showOrder()
  {
-	 for (int i; i < orders.size(); i++)
+	 for (int i= 0; i <orders.size(); i++)
 	 {
 		 cout << "customer name :" << orders[i].name << endl;
 		 cout << "customer adress :" << orders[i].address << endl;

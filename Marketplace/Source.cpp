@@ -89,7 +89,10 @@ int main() {
 	newCustomer.confirmOrder();
 
 	cout << "from main " << newSeller.orders.size() << endl;
+	cout << "befoooooor front method " <<  endl;
+
 	cout << "from main " << newSeller.orders.front().name << endl;
+	cout << "before omran loop" << endl;
 
 	for (auto o : newSeller.orders) {
 		cout << "Order Name " << o.products[0].name << endl;
