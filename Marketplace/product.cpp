@@ -61,8 +61,15 @@ void product::searchByCategory(string searched_category) {
 void product::searchByName(string searched_name) {
 	int x = 0;
 	while (!prod.empty()) {
+		cout << "Test" << endl;
 		if (prod[x].name.compare(searched_name) == 0) {
+			cout << prod[x].name << endl;
 			searched_que.push(prod[x]);
+			break;
+		}
+		else {
+			cout << "Product not found" << endl;
+			break;
 		}
 	}
 

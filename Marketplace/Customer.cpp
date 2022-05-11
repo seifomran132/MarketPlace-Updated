@@ -16,7 +16,7 @@ void Customer::browseByName() {
 	string searchName;
 	cin >> searchName;
 	myProduct.searchByName(searchName);
-
+	cout<<myProduct.searched_que.front().name;
 }
 
 void Customer::addProductToCart(product_type p)
@@ -34,4 +34,26 @@ void Customer::confirmOrder() {
 	order newOrder = order(this->name, this->address, this->phone, this->mycart.prod);
 	cout << "Cart Products from customer: " << newOrder.orderProducts.size() << endl;
 
+}
+
+
+void Customer::Order_Screen() {
+	int ch = 'y';
+
+	do {
+		cout << endl;
+		cout << "1 - Search for a product by name.\n";
+		cout << "2 - Search for a product by category.\n";
+
+		int choice;
+		cin >> choice;
+		if (choice == 1) {
+			browseByName();
+		}
+		else if (choice == 2) {
+			browseByCategory();
+		}
+		cout << "Do You Want to Continue ? (Y (yes) or N (no).\n";
+		cin >> ch;
+	} while (ch == 'y' || ch == 'Y');
 }

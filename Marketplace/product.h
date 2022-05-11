@@ -19,11 +19,11 @@ struct product_type {
 class product
 {
 	private:
-		queue <product_type> searched_que;
 		product_type p;
 		
 	public :
 		static vector<product_type> prod;
+		queue <product_type> searched_que;
 		product();
 		void add_products(product_type p);
 		void delete_products(int deleted_id);

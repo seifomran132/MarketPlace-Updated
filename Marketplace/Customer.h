@@ -24,5 +24,6 @@ public:
 	void addProductToCart(product_type p);
 	void viewCart();
 	void confirmOrder();
+	void Order_Screen();
 };
 

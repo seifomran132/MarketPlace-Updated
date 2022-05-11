@@ -40,6 +40,9 @@ Customer customerRegister(vector<Customer>& customers) {
 
 	Customer createdCustomer = Customer(temp.name, temp.email, temp.password, temp.address, temp.phone);
 	customers.push_back(createdCustomer);
+
+	cout << customers.capacity()<<endl;
+
 	return createdCustomer;
 }
 
@@ -63,7 +66,7 @@ seller sellerRegister(vector<seller>& sellers) {
 }
 
 
-seller sellerlogin(vector<seller>& sellers) {
+seller sellerLogin(vector<seller>& sellers) {
 	string enteredemail;
 	string enteredpassword;
 

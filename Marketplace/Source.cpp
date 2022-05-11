@@ -13,10 +13,21 @@ static vector<Customer> customers;
 
 int main() {
 
+
+	Globals glob = Globals();
 	seller loggedSeller = seller("","","");
+	Customer loggedCustomer = Customer("", "", "", "", "");
+
+	Customer tempc = Customer("seif", "s@.", "s", "s", "s");
+	customers.push_back(tempc);
+
+	seller temps = seller("s", "ss@.", "s");
+	glob.sellers.push_back(temps);
+
+	product_type createdProduct = temps.addingProduct();
 
 	int enterChois;
-	/*do {
+	do {
 		cout << "Enter 1 for Register\nEnter 2 for Login\n" << endl;
 		cin >> enterChois;
 
@@ -25,12 +36,12 @@ int main() {
 			cin >> enterChois;
 
 			if (enterChois == 1) {
-				Customer s = customerRegister(customers);
+				loggedCustomer = customerRegister(customers);
+				loggedCustomer.Order_Screen();
 			}
 			else if (enterChois == 2) {
-				loggedSeller = sellerRegister(sellers);				
+				sellerRegister(glob.sellers);
 				
-
 			}
 
 			else if (enterChois == 3) {
@@ -44,18 +55,20 @@ int main() {
 			cout << "Do you want to login as Customer or Seller\nEnter 1 for Customer\nEnter 2 for Seller\nEnter 3 for back" << endl;
 			cin >> enterChois;
 
-			if (enterChois == 2) {
-				Customer c1 = userLogin(customers);
-				if (c1.getEmail() != "") {
-					cout << "**********Login Success**********" << endl;
-				}
-				else {
-					cout << "**********Login Failed**********" << endl;
+			if (enterChois == 1) {
+				 Customer c1 = userLogin(customers);
+				 if (c1.getEmail() != "") {
+				 	cout << "**********Login Success**********" << endl;
+					c1.Order_Screen();
+				 }
+				 else {
+				 	cout << "**********Login Failed**********" << endl;
 
-				}
+				 }
 			}
 			else {
-				seller s1 = userLogin(sellers);
+				cout << "Seller Login" << endl;
+				seller s1 = sellerLogin(glob.sellers);
 				if (s1.getEmail() != "") {
 					cout << "**********Login Success**********" << endl;
 				}
@@ -71,9 +84,9 @@ int main() {
 			break;
 		}
 		
-	} while (true);*/
+	} while (true);
 
-	seller newSeller = seller("seif", "s@.", "s");
+	/*seller newSeller = seller("seif", "s@.", "s");
 
 	Globals global = Globals();
 
@@ -97,6 +110,6 @@ int main() {
 	for (auto o : newSeller.orders) {
 		cout << "Order Name " << o.products[0].name << endl;
 	}
-	newSeller.showOrder();
+	newSeller.showOrder();*/
 	return 0;
 }
