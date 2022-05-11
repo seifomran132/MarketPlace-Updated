@@ -16,7 +16,8 @@ void Customer::browseByName() {
 	string searchName;
 	cin >> searchName;
 	myProduct.searchByName(searchName);
-	cout<<myProduct.searched_que.front().name;
+	/*  seif ezz 5od bosa mtklmnesh tani tmm hahahahaha 3shan mfeshn hna emoji 
+	cout<<myProduct.searched_que.front().name;*/
 }
 
 void Customer::addProductToCart(product_type p)

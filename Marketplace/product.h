@@ -23,12 +23,11 @@ class product
 		
 	public :
 		static vector<product_type> prod;
-		queue <product_type> searched_que;
 		product();
 		void add_products(product_type p);
 		void delete_products(int deleted_id);
-		void searchByCategory(string searched_category);
-		void searchByName(string searched_name);
+		queue<product_type> searchByCategory(string searched_category);
+		queue<product_type> searchByName(string searched_name);
 
 };
 

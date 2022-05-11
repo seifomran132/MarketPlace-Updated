@@ -23,7 +23,7 @@ void product::delete_products(int deleted_id) {
 	
 
 	int i=0;
-	while (!prod.empty()){
+	while (i < prod.capacity()){
 
 		if (prod[i].id == deleted_id) {
 			prod.erase(prod.begin()+i);
@@ -41,40 +41,53 @@ void product::delete_products(int deleted_id) {
 }
 
 
-void product::searchByCategory(string searched_category) {
-	
-	
+queue<product_type> product::searchByCategory(string searched_category){
+	bool found = false;
+	queue <product_type> searched_que;
 
 	int i = 0;
-	while (!prod.empty()) {
+	while(i < prod.capacity()) {
 		if (prod[i].category.compare(searched_category)==0) {
 			searched_que.push(prod[i]);
+			cout << prod[i].id << endl;
+			cout << prod[i].name << endl;
+			cout << prod[i].price << endl;
+			cout << prod[i].category << endl;
+			cout << prod[i].quantity << endl;
+			found = true;
+			i++;
 		}
 	}
-
+	if (!found) {
+		cout << "sorry not found this category \n";
+	}
 	while (!searched_que.empty()) {
-		 searched_que.pop();
-		 cout << endl;
+		return searched_que ;
 	}
 }
 
-void product::searchByName(string searched_name) {
-	int x = 0;
-	while (!prod.empty()) {
-		cout << "Test" << endl;
-		if (prod[x].name.compare(searched_name) == 0) {
-			cout << prod[x].name << endl;
-			searched_que.push(prod[x]);
-			break;
-		}
-		else {
-			cout << "Product not found" << endl;
-			break;
+queue<product_type> product::searchByName(string searched_name) {
+	bool found = false;
+
+	queue <product_type> searched_que;
+
+	int i = 0;
+	while (i < prod.capacity()) {
+		if (prod[i].name.compare(searched_name) == 0) {
+			searched_que.push(prod[i]);
+			cout << prod[i].id << endl;
+			cout << prod[i].name << endl;
+			cout << prod[i].price << endl;
+			cout << prod[i].category << endl;
+			cout << prod[i].quantity << endl;
+			found = true;
+			i++;
 		}
 	}
-
+	if (!found) {
+		cout << "sorry not found this product \n";
+	}
 	while (!searched_que.empty()) {
-		searched_que.pop();
-		cout << endl;
+		return searched_que;
 	}
 }
