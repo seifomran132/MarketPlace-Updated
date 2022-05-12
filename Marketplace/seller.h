@@ -18,7 +18,7 @@ public:
 	
 	seller(string name, string email, string password);
 	
-	string test = "Hello " + name;
+	string sellerName =  name;
 	static deque<OrderDetails> orders;
 	product pro;
 	product proloop;
