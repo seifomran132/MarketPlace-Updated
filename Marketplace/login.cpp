@@ -1,10 +1,12 @@
 #include "login.h"
-
+#include "GLOBALS.h"
 
 template<class t>
 t userLogin(vector<t>& users) {
 	string enteredEmail;
 	string enteredPassword;
+
+	t s = t("", "", "");
 
 
 
@@ -16,19 +18,21 @@ t userLogin(vector<t>& users) {
 	int i = 0;
 
 
+
 	while (i != users.capacity()) {
 		if (users[i].getEmail() == enteredEmail && users[i].getPassword() == enteredPassword) {
-			
+			users[i].setIsLogged(true);
 			return users[i];
 		}
 		else {
-
-			break;
+			
+			return s;
+			
 		}
 		i++;
 
 	}
 	cout << "Invalid login details";
-
+	return s;
 }
 

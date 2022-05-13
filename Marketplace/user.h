@@ -6,9 +6,9 @@ using namespace std;
 class user
 {
 protected:
+	bool isLoggedIn = false;
 	static int nextId;
 	int id;
-	user();
 	string name;
 	string email;
 	string password;
@@ -18,7 +18,8 @@ public:
 	string getPassword();
 	int getID();
 	string getName();
-
+	void setIsLogged(bool val);
+	bool getIsLogged();
 
 };
 

@@ -27,5 +27,5 @@ public:
 	void deletProduct();
 	void UpdateProduct(int idToBeUpdated);
 	void showOrder();
-
+	void sellerScreen();
 };

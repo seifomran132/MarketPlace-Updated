@@ -16,6 +16,8 @@ seller::seller(string name, string email, string password)
 
 
 }
+
+
 product_type seller::addingProduct()
 {
 
@@ -132,4 +134,39 @@ product_type seller::addingProduct()
 	 {
 		 cout << "Sorry there is no Ordders yet" << endl;
 	 }
+ }
+
+ void seller::sellerScreen() {
+	 int ch = 'y';
+
+	 do {
+		 cout << endl;
+		 cout << "1 - Add New Product.\n";
+		 cout << "2 - Delete Product.\n";
+		 cout << "3 - Update Product.\n";
+		 cout << "4 - Show Existing Orders.\n";
+
+
+		 cout << endl;
+
+		 int choice;
+		 cin >> choice;
+		 if (choice == 1) {
+			 addingProduct();
+		 }
+		 else if (choice == 2) {
+			 deletProduct();
+		 }
+		 else if (choice == 3) {
+			 int update_id;
+			 cout << "Enter the ID of product" << endl;
+			 cin >> update_id;
+			 UpdateProduct(update_id);
+		 }
+		 else if (choice == 4) {
+			 showOrder();
+		 }
+		 cout << "Enter 0 to back to menu\n";
+		 cin >> ch;
+	 } while (ch == 0);
  }

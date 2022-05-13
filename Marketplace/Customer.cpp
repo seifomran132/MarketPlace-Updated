@@ -5,6 +5,11 @@ Customer::Customer(string name, string email, string password, string address, s
 	this->address = address;
 	this->phone = phone;
 }
+Customer::Customer(string name, string email, string password)
+	: user(name, email, password)
+{
+	
+}
 void Customer::browseByCategory() {
 	cout << "Enter Product Category :" << endl;
 	string searchCat;

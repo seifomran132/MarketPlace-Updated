@@ -26,3 +26,10 @@ string user::getName()
 {
 	return name;
 }
+
+void user::setIsLogged(bool val) {
+	this->isLoggedIn = val;
+}
+bool user::getIsLogged() {
+	return isLoggedIn;
+}

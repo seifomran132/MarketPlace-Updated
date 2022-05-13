@@ -24,6 +24,9 @@ int main() {
 	seller temps = seller("s", "ss@.", "s");
 	glob.sellers.push_back(temps);
 
+
+	
+
 	//product_type createdProduct = temps.addingProduct();
 	// seif ezz product_type createdProduct2 = temps.addingProduct();
 
@@ -41,7 +44,7 @@ int main() {
 				loggedCustomer.Order_Screen();
 			}
 			else if (enterChois == 2) {
-				sellerRegister(glob.sellers);
+				loggedSeller = sellerRegister(glob.sellers);
 				
 			}
 
@@ -57,10 +60,12 @@ int main() {
 			cin >> enterChois;
 
 			if (enterChois == 1) {
-				 Customer c1 = userLogin(customers);
-				 if (c1.getEmail() != "") {
+				cout << "Customer Login" << endl;
+
+				 loggedCustomer = userLogin<Customer>(customers);
+				 if (loggedCustomer.getIsLogged() == true) {
 				 	cout << "**********Login Success**********" << endl;
-					c1.Order_Screen();
+					loggedCustomer.Order_Screen();
 				 }
 				 else {
 				 	cout << "**********Login Failed**********" << endl;
@@ -69,9 +74,13 @@ int main() {
 			}
 			else {
 				cout << "Seller Login" << endl;
-				seller s1 = sellerLogin(glob.sellers);
-				if (s1.getEmail() != "") {
+				cout << &glob.sellers << endl;
+
+				loggedSeller = userLogin<seller>(glob.sellers);
+
+				if (loggedSeller.getIsLogged() == true) {
 					cout << "**********Login Success**********" << endl;
+					loggedSeller.sellerScreen();
 				}
 				else {
 					cout << "**********Login Failed**********" << endl;
