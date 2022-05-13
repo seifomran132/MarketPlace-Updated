@@ -81,7 +81,7 @@ seller sellerLogin(vector<seller>& sellers) {
 			return sellers[i];
 		}
 		else {
-			
+
 			break;
 		}
 		i++;

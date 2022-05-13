@@ -22,3 +22,7 @@ int user::getID()
 {
 	return id;
 }
+string user::getName()
+{
+	return name;
+}

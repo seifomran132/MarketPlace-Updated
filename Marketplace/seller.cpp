@@ -23,13 +23,15 @@ product_type seller::addingProduct()
 	cout << "entre product id:";
 	cin >> sel.id;
 	cout << "\nentre product name :";
-	cin >> sel.name;
+	cin.ignore();
+	getline(cin, sel.name);
 	cout << "\n entre product price :";
 	cin >> sel.price;
 	cout << "\n entre product quantity:";
 	cin >> sel.quantity;
 	cout << "\n entre product category:";
-	cin >> sel.category;
+	cin.ignore();
+	getline(cin, sel.category);
 	pro.add_products(sel);
 	return sel;
 }
@@ -46,8 +48,6 @@ product_type seller::addingProduct()
 	int x;
 	for (int count = 0; count <= proloop.prod.capacity()-1; count++)
 		 {
-
-
 			 if (proloop.prod[count].id == idToBeUpdated)
 			 {
 				 cout << "\n 1 to update ID\n 2 to update name\n 3 to update price \n 4 to update category \n 5 to update quantity \n 6 to update seller ID " << endl;
@@ -107,16 +107,29 @@ product_type seller::addingProduct()
 }
  void seller::showOrder()
  {
-	 for (int i= 0; i <orders.size(); i++)
+	 if (!orders.empty())
 	 {
-		 cout << "customer name :" << orders[i].name << endl;
-		 cout << "customer adress :" << orders[i].address << endl;
-		 cout << "customer phone :" << orders[i].phone << endl;
-		 cout << "product ID :" << orders[i].products[i].id << endl;
-		 cout << "product name :" << orders[i].products[i].name << endl;
-		 cout << "product category :" << orders[i].products[i].category << endl;
-		 cout << "product price :" << orders[i].products[i].price << endl;
-		 cout << "product quentity :" << orders[i].products[i].quantity << endl;
-		 cout << "product Seller Id :" << orders[i].products[i].seller_id << endl;
+
+		 for (int i = 0; i < orders.size(); i++)
+		 {
+			 cout << "Welcome:" << sellerName;
+			 cout << "Order no. #" << i + 1 << endl;
+			 cout << "customer name :" << orders[i].name << endl;
+			 cout << "customer adress :" << orders[i].address << endl;
+			 cout << "customer phone :" << orders[i].phone << endl;
+				for (int j = 0; j < orders[i].products.size(); j++)
+				{
+				 cout << "product ID :" << orders[i].products[j].id << endl;
+				 cout << "product name :" << orders[i].products[j].name << endl;
+				 cout << "product category :" << orders[i].products[j].category << endl;
+				 cout << "product price :" << orders[i].products[j].price << endl;
+				 cout << "product quentity :" << orders[i].products[j].quantity << endl;
+				 cout << "product Seller Id :" << orders[i].products[j].seller_id << endl;
+				}
+		 }
+	 }
+	 else
+	 {
+		 cout << "Sorry there is no Ordders yet" << endl;
 	 }
  }
