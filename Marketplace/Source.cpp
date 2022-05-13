@@ -24,7 +24,7 @@ int main() {
 	seller temps = seller("s", "ss@.", "s");
 	glob.sellers.push_back(temps);
 
-	product_type createdProduct = temps.addingProduct();
+	//product_type createdProduct = temps.addingProduct();
 	// seif ezz product_type createdProduct2 = temps.addingProduct();
 
 	int enterChois;

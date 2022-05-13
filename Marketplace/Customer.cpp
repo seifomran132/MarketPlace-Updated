@@ -11,29 +11,53 @@ void Customer::browseByCategory() {
 	cin >> searchCat;
 	myProduct.searchByCategory(searchCat);
 }
-void Customer::browseByName() {
+deque<product_type> Customer::browseByName() {
 	cout << "Enter Product Name :" << endl;
 	string searchName;
 	cin >> searchName;
-	myProduct.searchByName(searchName);
+	deque<product_type> q = myProduct.searchByName(searchName);
 	/*  seif ezz 5od bosa mtklmnesh tani tmm hahahahaha 3shan mfeshn hna emoji 
 	cout<<myProduct.searched_que.front().name;*/
+
+	cout << "BrowseByName" << endl;
+
+
+	return q;
 }
 
-void Customer::addProductToCart(product_type p)
+void Customer::addProductToCart(product_type p, int q)
 {
-	mycart.addToCart(p);
+	if (p.quantity < q) {
+		cout << "Sorry, no sufficient quantiy" << endl;
+		cout << "Available " << p.quantity << " from this product now" << endl;
+	}
+	else {
+		mycart.addToCart(p);
+		cout << "Product Added To Cart" << endl;
+	}
 }
 
 void Customer::viewCart()
 {
-	//mycart.displayProduct();
+	for (int i = 0; i < mycart.prod.size(); i++) {
+		cout << "Item " << i + 1 << " " << mycart.prod[i].name << endl;
+	}
+	if (!mycart.prod.empty()) {
+		int c;
+		cout << "Enter 1 to confirm order all products" << endl;
+		cin >> c;
+
+		if (c == 1) {
+			confirmOrder();
+		}
+		else {
+			return;
+		}
+	}
 }
 
 void Customer::confirmOrder() {
-	cout << "Cart from customer: " << mycart.prod.size() << endl;
 	order newOrder = order(this->name, this->address, this->phone, this->mycart.prod);
-	cout << "Cart Products from customer: " << newOrder.orderProducts.size() << endl;
 
 }
 
@@ -45,16 +69,37 @@ void Customer::Order_Screen() {
 		cout << endl;
 		cout << "1 - Search for a product by name.\n";
 		cout << "2 - Search for a product by category.\n";
+		cout << "3 - View or Confirm Cart.\n";
+
+		cout << endl;
 
 		int choice;
 		cin >> choice;
 		if (choice == 1) {
-			browseByName();
+			deque<product_type> searchProducts = browseByName();
+			do {
+				cout << "Enter product id to Add this product to cart\nEnter 0 to cancel search" << endl;
+				cin >> ch;
+				int quantity;
+				
+				for (int i = 0; i < searchProducts.size(); i++) {
+					if (searchProducts[i].id == ch) {
+						cout << "Please Enter Quantity" << endl;
+						cin >> quantity;
+						addProductToCart(searchProducts[i], quantity);
+						
+					}
+				}
+			} while (ch != 0);
+
 		}
 		else if (choice == 2) {
 			browseByCategory();
 		}
-		cout << "Do You Want to Continue ? (Y (yes) or N (no).\n";
+		else if (choice == 3) {
+			viewCart();
+		}
+		cout << "Enter 0 to back to menu\n";
 		cin >> ch;
-	} while (ch == 'y' || ch == 'Y');
+	} while (ch == 0);
 }

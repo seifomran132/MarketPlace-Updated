@@ -23,12 +23,19 @@ class order
 		orderDetails.address = address;
 		orderDetails.phone = phone;
 		orderDetails.products = products;
-		cout << "Start Assign product" << endl;
-		cout << "Cart " << products[0].name << endl;
+
 
 		for (int i = 0; i < products.size(); i++) {
-			cout << "Inside loop from order c" << endl;
-			assignOrder(products[i]);
+			if (products[i].quantity > 0) {
+				assignOrder(products[i]);
+				cout << "Product " << products[i].name << " Confirmed" << endl;
+				products[i].quantity--;
+				cout << "Quantity " << products[i].quantity << endl;
+
+			}
+			else {
+				cout << products[i].name <<" Out of Stock"<<endl;
+			}
 		}
 	}
 

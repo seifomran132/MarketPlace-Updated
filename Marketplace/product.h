@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 #include <vector>
-#include <queue>
+#include <deque>
 
 using namespace std;
 
@@ -23,11 +23,14 @@ class product
 		
 	public :
 		static vector<product_type> prod;
+
 		product();
 		void add_products(product_type p);
 		void delete_products(int deleted_id);
-		queue<product_type> searchByCategory(string searched_category);
-		queue<product_type> searchByName(string searched_name);
+		deque<product_type> searchByCategory(string searched_category);
+		deque<product_type> searchByName(string searched_name);
+
+		
 
 };
 

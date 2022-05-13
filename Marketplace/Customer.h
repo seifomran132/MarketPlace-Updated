@@ -20,8 +20,8 @@ public:
 	cart mycart;
 	Customer(string name, string email, string password, string address, string phone);
 	void browseByCategory();
-	void browseByName();
-	void addProductToCart(product_type p);
+	deque<product_type> browseByName();
+	void addProductToCart(product_type p, int q);
 	void viewCart();
 	void confirmOrder();
 	void Order_Screen();

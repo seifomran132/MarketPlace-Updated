@@ -8,6 +8,12 @@ deque<OrderDetails> seller::orders;
 seller::seller(string name, string email, string password)
 	:user(name, email, password)
 {
+	// Some temp products
+	product_type p1 = { 1, "prod1", 100, "cat1", 2, this->id };
+	product_type p2 = { 2, "prod2", 200, "cat2", 2, this->id };
+	pro.add_products(p1);
+	pro.add_products(p2);
+
 
 }
 product_type seller::addingProduct()
