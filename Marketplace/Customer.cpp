@@ -75,6 +75,7 @@ void Customer::Order_Screen() {
 		cout << "1 - Search for a product by name.\n";
 		cout << "2 - Search for a product by category.\n";
 		cout << "3 - View or Confirm Cart.\n";
+		cout << "4 - Sign Out.\n";
 
 		cout << endl;
 
@@ -103,6 +104,9 @@ void Customer::Order_Screen() {
 		}
 		else if (choice == 3) {
 			viewCart();
+		}
+		else if (choice == 4) {
+			break;
 		}
 		cout << "Enter 0 to back to menu\n";
 		cin >> ch;

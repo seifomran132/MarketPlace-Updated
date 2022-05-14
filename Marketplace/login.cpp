@@ -20,15 +20,12 @@ t userLogin(vector<t>& users) {
 
 
 	while (i != users.capacity()) {
+		cout << "User: " << i+1 << endl;
 		if (users[i].getEmail() == enteredEmail && users[i].getPassword() == enteredPassword) {
 			users[i].setIsLogged(true);
 			return users[i];
 		}
-		else {
-			
-			return s;
-			
-		}
+		
 		i++;
 
 	}

@@ -145,6 +145,7 @@ product_type seller::addingProduct()
 		 cout << "2 - Delete Product.\n";
 		 cout << "3 - Update Product.\n";
 		 cout << "4 - Show Existing Orders.\n";
+		 cout << "5 - Sign Out.\n";
 
 
 		 cout << endl;
@@ -165,6 +166,9 @@ product_type seller::addingProduct()
 		 }
 		 else if (choice == 4) {
 			 showOrder();
+		 }
+		 else if (choice == 5) {
+			 break;
 		 }
 		 cout << "Enter 0 to back to menu\n";
 		 cin >> ch;
