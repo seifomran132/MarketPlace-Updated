@@ -22,16 +22,16 @@ product_type seller::addingProduct()
 {
 
 	sel.seller_id = this->id;
-	cout << "entre product id:";
+	cout << "\nentre product id:";
 	cin >> sel.id;
 	cout << "\nentre product name :";
 	cin.ignore();
 	getline(cin, sel.name);
-	cout << "\n entre product price :";
+	cout << "\nentre product price :";
 	cin >> sel.price;
-	cout << "\n entre product quantity:";
+	cout << "\nentre product quantity:";
 	cin >> sel.quantity;
-	cout << "\n entre product category:";
+	cout << "\nentre product category:";
 	cin.ignore();
 	getline(cin, sel.category);
 	pro.add_products(sel);
@@ -46,13 +46,16 @@ product_type seller::addingProduct()
 }
  void seller::UpdateProduct(int idToBeUpdated)
  {
-	cout << "welcome in updating....";
-	int x;
-	for (int count = 0; count <= proloop.prod.capacity()-1; count++)
+	 cout << "welcome in updating....";
+	 int x;
+	 char ch = 'y';
+	 if (!proloop.prod.empty()) {
+
+		 for (int count = 0; count <= proloop.prod.capacity() - 1; count++)
 		 {
 			 if (proloop.prod[count].id == idToBeUpdated)
 			 {
-				 cout << "\n 1 to update ID\n 2 to update name\n 3 to update price \n 4 to update category \n 5 to update quantity \n 6 to update seller ID " << endl;
+				 cout << "\n1-to update ID\n2-to update name\n3-to update price\n4-to update category\n5-to update quantity\n6-to update seller ID\n0-to back" << endl;
 				 cin >> x;
 				 switch (x)
 				 {
@@ -63,16 +66,20 @@ product_type seller::addingProduct()
 					 cout << "\nentre new id :";
 					 cin >> newId;
 					 proloop.prod[count].id = newId;
-					 break; }
+					 break;
+				 }
 				 case 2: {
 					 string newname;
+					 cout << "old name is :" << proloop.prod[count].name << endl;
 					 cout << "entre new name :";
-					 cin >> newname;
+					 cin.ignore();
+					 getline(cin, newname);
 					 proloop.prod[count].name = newname;
 					 break; }
 				 case 3:
 				 {
 					 double newPrice;
+					 cout << "old price:" << proloop.prod[count].price << endl;
 					 cout << "entre new price:";
 					 cin >> newPrice;
 					 proloop.prod[count].price = newPrice;
@@ -80,13 +87,17 @@ product_type seller::addingProduct()
 				 }
 				 case 4: {
 					 string newCategory;
+					 cout << "old category:" << proloop.prod[count].category << endl;
 					 cout << "entre new category:";
-					 cin >> newCategory;
+					 cin.ignore();
+					 getline(cin, newCategory);
 					 proloop.prod[count].category = newCategory;
-					 break; }
+					 break;
+				 }
 				 case 5:
 				 {
 					 int newquntity;
+					 cout << "old quntity:" << proloop.prod[count].quantity << endl;
 					 cout << "entre new quntity:";
 					 cin >> newquntity;
 					 proloop.prod[count].quantity = newquntity;
@@ -94,19 +105,37 @@ product_type seller::addingProduct()
 				 }
 				 case 6:
 				 {int newId;
+				 cout << "Old ID:" << proloop.prod[count].seller_id << endl;
 				 cout << "entre new ID:";
 				 cin >> newId;
 				 proloop.prod[count].seller_id = newId;
 				 break;
 				 }
+				 case 0:
+				 {
+					 sellerScreen();
+					 break;
+				 }
+				 cout << "Any other update ? (y/n)" << endl;
+				 cin >> ch;
+				 if (ch == 'y')
+				 {
+					 UpdateProduct(idToBeUpdated);
+				 }
+				 else
+				 {
+					 sellerScreen();
+				 }
+
 				 }
 			 }
-			 else
-			 {
-				 cout << "sorry product not found";
-			 }
 		 }
-}
+	 }
+	 else
+	 {
+		 cout << "there is no products to update" << endl;
+	 }
+ }
  void seller::showOrder()
  {
 	 if (!orders.empty())
@@ -135,7 +164,6 @@ product_type seller::addingProduct()
 		 cout << "Sorry there is no Ordders yet" << endl;
 	 }
  }
-
  void seller::sellerScreen() {
 	 int ch = 'y';
 

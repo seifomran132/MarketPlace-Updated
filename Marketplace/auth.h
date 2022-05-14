@@ -24,7 +24,7 @@ t userRegister(vector<t>& users, int type);
 
 Customer customerRegister(vector<Customer>& customers);
 seller sellerRegister(vector<seller>& sellers);
-user customerLogin();
+user customerLogin();//<-
 seller sellerLogin(vector<seller>& sellers);
 bool emailValidation(string email);
-void userLogout();
+void userLogout();//<-

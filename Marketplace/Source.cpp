@@ -19,7 +19,6 @@ int main() {
 	//cout << glob.sellers.capacity()<<endl;
 	seller loggedSeller = seller("","","");
 	Customer loggedCustomer = Customer("", "", "", "", "");
-
 	/*Customer tempc = Customer("seif", "s@.", "s", "s", "s");
 	customers.push_back(tempc);
 
