@@ -1,15 +1,22 @@
 #pragma once
 #include <vector>
 #include "product.h"
+
+struct cart_type {
+	product_type cart_products;
+	int ordered_quantity;
+};
+
 class cart {
 public:
 	double totalPrice;
-	vector <product_type> prod;
+	vector <cart_type> prod;
 	vector<string>promo;
+	product myProd;
 	cart(void);
-	void addToCart(product_type);
+	void addToCart(cart_type);
 	void displayTotalPrice();
 	bool removeFromCart(int removed_id);
-	void updateQuantity();//<--
+	bool updateQuantity(int id, int q);//<--
 	void promoPrice(string promocode);
 };

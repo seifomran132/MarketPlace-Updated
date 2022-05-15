@@ -3,12 +3,13 @@
 #include<deque>
 #include "user.h"
 #include "product.h"
+#include "cart.h"
 
 struct OrderDetails {
 	string name;
 	string address;
 	string phone;
-	vector<product_type> products;
+	vector<cart_type> products;
 };
 
 class seller : public user

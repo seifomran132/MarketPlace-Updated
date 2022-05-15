@@ -10,7 +10,22 @@ cart::cart(void)
 	promo.push_back("test3");
 }
 
-void cart::addToCart(product_type p)
+bool cart::updateQuantity(int prodID, int q) {
+	for (int i = 0; i < myProd.prod.size(); i++) {
+		if (myProd.prod[i].id == prodID) {
+			if (myProd.prod[i].quantity > q) {
+				myProd.prod[i].quantity -= q;
+				return true;
+			}
+			else {
+				cout << "No sufficient stock";
+				return false;
+			}
+		}
+	}
+}
+
+void cart::addToCart(cart_type p)
 {
 	prod.push_back(p);
 }
@@ -19,9 +34,9 @@ bool cart::removeFromCart(int removed_id) {
 
 	bool found = false;
 	int i = 0;
-	while (!prod.empty()) {
+	while (i != prod.size()) {
 
-		if (prod[i].id == removed_id) {
+		if (prod[i].cart_products.id == removed_id) {
 			prod.erase(prod.begin() + i);
 			found = true;
 			break;
@@ -57,9 +72,9 @@ void  cart::displayTotalPrice()
 	string promo;
 	for (int i = 0; i < prod.size(); i++)
 	{
-		cout << "product Name :" << prod[i].name << endl;
-		cout << "product price :" << prod[i].price << endl;
-		temp += prod[i].price;
+		cout << "product Name :" << prod[i].cart_products.name << endl;
+		cout << "product price :" << prod[i].cart_products.price << endl;
+		temp += prod[i].cart_products.price;
 
 	}
 	temp = totalPrice;

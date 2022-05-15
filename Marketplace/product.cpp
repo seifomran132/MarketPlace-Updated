@@ -77,9 +77,7 @@ deque<product_type> product::searchByName(string searched_name) {
 
 	int i = 0;
 	while (i < prod.capacity()) {
-		cout << "Search " << i << endl;
-		cout << "Prod " << prod.capacity() << endl;
-
+		
 		if (prod[i].name.compare(searched_name) == 0) {
 			searched_que.push_back(prod[i]);
 			cout << "Product ID: " << prod[i].id << endl;

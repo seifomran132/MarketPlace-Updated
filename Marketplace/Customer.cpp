@@ -24,7 +24,6 @@ deque<product_type> Customer::browseByName() {
 	/*  seif ezz 5od bosa mtklmnesh tani tmm hahahahaha 3shan mfeshn hna emoji 
 	cout<<myProduct.searched_que.front().name;*/
 
-	cout << "BrowseByName" << endl;
 
 
 	return q;
@@ -32,12 +31,16 @@ deque<product_type> Customer::browseByName() {
 
 void Customer::addProductToCart(product_type p, int q)
 {
+	cart_type temp;
+	
 	if (p.quantity < q) {
 		cout << "Sorry, no sufficient quantiy" << endl;
 		cout << "Available " << p.quantity << " from this product now" << endl;
 	}
 	else {
-		mycart.addToCart(p);
+		temp.cart_products = p;
+		temp.ordered_quantity = q;
+		mycart.addToCart(temp);
 		cout << "Product Added To Cart" << endl;
 	}
 }
@@ -45,15 +48,29 @@ void Customer::addProductToCart(product_type p, int q)
 void Customer::viewCart()
 {
 	for (int i = 0; i < mycart.prod.size(); i++) {
-		cout << "Item " << i + 1 << " " << mycart.prod[i].name << endl;
+		cout << "Item " << i + 1 << " " << mycart.prod[i].cart_products.name << endl;
 	}
 	if (!mycart.prod.empty()) {
 		int c;
-		cout << "Enter 1 to confirm order all products" << endl;
+		cout << "Enter 1 to confirm order all products\nEnter 2 to remove product from cart" << endl;
 		cin >> c;
 
 		if (c == 1) {
 			confirmOrder();
+		}
+		else if (c == 2) {
+			
+			cout << "Enter product id to remove from cart" << endl;
+			
+			int rem_id;
+			cin >> rem_id;
+			bool isRemoved = mycart.removeFromCart(rem_id);
+			if (isRemoved) {
+				cout << "Product Removed Successfully" << endl;
+			}
+			else {
+				cout << "Product is not in the cart" << endl;
+			}
 		}
 		else {
 			return;
