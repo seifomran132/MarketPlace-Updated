@@ -14,6 +14,8 @@ struct OrderDetails {
 
 class seller : public user
 {
+private :
+	static int prod_id;
 
 public:
 	

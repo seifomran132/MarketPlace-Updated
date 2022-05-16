@@ -7,7 +7,7 @@ using namespace std;
 
 
 struct product_type {
-	int id;
+    int id ;
 	string name;
 	double price;
 	string category;
@@ -20,7 +20,7 @@ class product
 {
 	private:
 		product_type p;
-		
+
 	public :
 		static vector<product_type> prod;
 

@@ -12,12 +12,12 @@ seller::seller(string name, string email, string password)
 }
 
 
+int seller::prod_id = 0;
 product_type seller::addingProduct()
 {
 
 	sel.seller_id = this->id;
-	cout << "\nentre product id:";
-	cin >> sel.id;
+	sel.id = ++prod_id;
 	cout << "\nentre product name :";
 	cin.ignore();
 	getline(cin, sel.name);
