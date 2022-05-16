@@ -16,24 +16,12 @@ int main() {
 
 
 	Globals glob = Globals();
-	//cout << glob.sellers.capacity()<<endl;
 	seller loggedSeller = seller("","","");
 	Customer loggedCustomer = Customer("", "", "", "", "");
-	/*Customer tempc = Customer("seif", "s@.", "s", "s", "s");
-	customers.push_back(tempc);
-
-	seller temps = seller("s", "ss@.", "s");
-	glob.sellers.push_back(temps);*/
-
-
 	
-
-	//product_type createdProduct = temps.addingProduct();
-	// seif ezz product_type createdProduct2 = temps.addingProduct();
 
 	int enterChois;
 	do {
-		cout << customers.size() << endl;
 		cout << "Enter 1 for Register\nEnter 2 for Login\n" << endl;
 		cin >> enterChois;
 
@@ -49,7 +37,7 @@ int main() {
 			}
 			else if (enterChois == 2) {
 				loggedSeller = sellerRegister(glob.sellers);
-				
+				loggedSeller.sellerScreen();
 			}
 
 			else if (enterChois == 3) {
@@ -80,7 +68,6 @@ int main() {
 			}
 			else {
 				cout << "Seller Login" << endl;
-				cout << &glob.sellers << endl;
 
 				loggedSeller = userLogin<seller>(glob.sellers);
 

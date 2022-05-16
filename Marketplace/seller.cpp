@@ -137,7 +137,9 @@ product_type seller::addingProduct()
 
 		 for (int i = 0; i < orders.size(); i++)
 		 {
-			 cout << "Welcome:" << sellerName;
+			 cout << "-------------------------------------------------------" << endl;
+
+			 cout << "Welcome: " << sellerName<<endl;
 			 cout << "Order no. #" << i + 1 << endl;
 			 cout << "customer name :" << orders[i].name << endl;
 			 cout << "customer adress :" << orders[i].address << endl;
@@ -151,6 +153,8 @@ product_type seller::addingProduct()
 				 cout << "product quentity :" << orders[i].products[j].ordered_quantity << endl;
 				 cout << "product Seller Id :" << orders[i].products[j].cart_products.seller_id << endl;
 				}
+			cout << "-------------------------------------------------------" << endl;
+
 		 }
 	 }
 	 else
@@ -159,7 +163,7 @@ product_type seller::addingProduct()
 	 }
  }
  void seller::sellerScreen() {
-	 int ch = 'y';
+	 int ch;
 
 	 do {
 		 cout << endl;

@@ -10,19 +10,21 @@ Customer::Customer(string name, string email, string password)
 {
 	
 }
-void Customer::browseByCategory() {
+deque<product_type> Customer::browseByCategory() {
 	cout << "Enter Product Category :" << endl;
 	string searchCat;
 	cin >> searchCat;
-	myProduct.searchByCategory(searchCat);
+	deque<product_type> q = myProduct.searchByCategory(searchCat);
+
+	return q;
+
 }
 deque<product_type> Customer::browseByName() {
 	cout << "Enter Product Name :" << endl;
 	string searchName;
 	cin >> searchName;
 	deque<product_type> q = myProduct.searchByName(searchName);
-	/*  seif ezz 5od bosa mtklmnesh tani tmm hahahahaha 3shan mfeshn hna emoji 
-	cout<<myProduct.searched_que.front().name;*/
+	
 
 
 
@@ -85,7 +87,7 @@ void Customer::confirmOrder() {
 
 
 void Customer::Order_Screen() {
-	int ch = 'y';
+	int ch;
 
 	do {
 		cout << endl;
@@ -117,7 +119,21 @@ void Customer::Order_Screen() {
 
 		}
 		else if (choice == 2) {
-			browseByCategory();
+			deque<product_type> searchProducts = browseByCategory();
+			do {
+				cout << "Enter product id to Add this product to cart\nEnter 0 to cancel search" << endl;
+				cin >> ch;
+				int quantity;
+
+				for (int i = 0; i < searchProducts.size(); i++) {
+					if (searchProducts[i].id == ch) {
+						cout << "Please Enter Quantity" << endl;
+						cin >> quantity;
+						addProductToCart(searchProducts[i], quantity);
+
+					}
+				}
+			} while (ch != 0);
 		}
 		else if (choice == 3) {
 			viewCart();
