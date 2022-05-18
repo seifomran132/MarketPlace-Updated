@@ -145,15 +145,14 @@ product_type seller::addingProduct()
 			 cout << "customer name :" << orders[i].name << endl;
 			 cout << "customer adress :" << orders[i].address << endl;
 			 cout << "customer phone :" << orders[i].phone << endl;
-				for (int j = 0; j <orders[i].products.size(); j++)
-				{
-				 cout << "product ID :" << orders[i].products[j].cart_products.id << endl;
-				 cout << "product name :" << orders[i].products[j].cart_products.name << endl;
-				 cout << "product category :" << orders[i].products[j].cart_products.category << endl;
-				 cout << "product price :" << orders[i].products[j].cart_products.price << endl;
-				 cout << "product quentity :" << orders[i].products[j].ordered_quantity << endl;
-				 cout << "product Seller Id :" << orders[i].products[j].cart_products.seller_id << endl;
-				}
+				
+			cout << "product ID :" << orders[i].products[0].cart_products.id << endl;
+			cout << "product name :" << orders[i].products[0].cart_products.name << endl;
+			cout << "product category :" << orders[i].products[0].cart_products.category << endl;
+			cout << "product price :" << orders[i].products[0].cart_products.price << endl;
+			cout << "product quentity :" << orders[i].products[0].ordered_quantity << endl;
+			cout << "product Seller Id :" << orders[i].products[0].cart_products.seller_id << endl;
+			
 			cout << "-------------------------------------------------------" << endl;
 
 		 }

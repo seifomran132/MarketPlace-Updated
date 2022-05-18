@@ -67,17 +67,19 @@ void  cart::promoPrice(string promocode)
 } //saif
 void  cart::displayTotalPrice()
 {
-	double temp = 0.0;
+	double temp = 0;
 	char ch = 'y';
 	string promo;
 	for (int i = 0; i < prod.size(); i++)
 	{
 		cout << "product Name :" << prod[i].cart_products.name << endl;
 		cout << "product price :" << prod[i].cart_products.price << endl;
-		temp += prod[i].cart_products.price;
+		cout << "product Quantity :" << prod[i].ordered_quantity << endl;
+
+		temp += prod[i].cart_products.price * prod[i].ordered_quantity;
 
 	}
-	temp = totalPrice;
+	totalPrice = temp;
 	cout << "total price is :" << totalPrice <<" .L.E" << endl;
 	cout << "do you have a promo code ? (y/n)";
 	cin >> ch;

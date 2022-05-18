@@ -55,13 +55,9 @@ void Customer::addProductToCart(product_type p, int q)
 
 void Customer::viewCart()
 {
-	for (int i = 0; i < mycart.prod.size(); i++) {
-		cout << "-------- " << "Item " << i + 1 << "--------" << endl;
-		cout << "ID " << mycart.prod[i].cart_products.id << endl;
-		cout << "Name " << mycart.prod[i].cart_products.name << endl;
-		cout << "Price "  << mycart.prod[i].cart_products.price << endl;
+	
+	mycart.displayTotalPrice();
 
-	}
 	if (!mycart.prod.empty()) {
 		int c;
 		cout << "Enter 1 to confirm order all products\nEnter 2 to remove product from cart" << endl;
@@ -89,7 +85,6 @@ void Customer::viewCart()
 		}
 	}
 	
-	mycart.displayTotalPrice();
 }
 
 void Customer::confirmOrder() {
