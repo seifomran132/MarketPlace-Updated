@@ -15,7 +15,9 @@ Customer::Customer(string name, string email, string password)
 deque<product_type> Customer::browseByCategory() {
 	cout << "Enter Product Category :" << endl;
 	string searchCat;
-	cin >> searchCat;
+	cin.ignore();
+	getline(cin, searchCat);
+	//cin >> searchCat;
 	deque<product_type> q = myProduct.searchByCategory(searchCat);
 
 	return q;
@@ -24,7 +26,9 @@ deque<product_type> Customer::browseByCategory() {
 deque<product_type> Customer::browseByName() {
 	cout << "Enter Product Name :" << endl;
 	string searchName;
-	cin >> searchName;
+	cin.ignore();
+	getline(cin, searchName);
+	//cin >> searchName;
 	deque<product_type> q = myProduct.searchByName(searchName);
 	
 
@@ -106,17 +110,23 @@ void Customer::Order_Screen() {
 		if (choice == 1) {
 			deque<product_type> searchProducts = browseByName();
 			do {
-				cout << "Enter product id to Add this product to cart\nEnter 0 to cancel search" << endl;
-				cin >> ch;
-				int quantity;
-				
-				for (int i = 0; i < searchProducts.size(); i++) {
-					if (searchProducts[i].id == ch) {
-						cout << "Please Enter Quantity" << endl;
-						cin >> quantity;
-						addProductToCart(searchProducts[i], quantity);
-						
+				if (searchProducts.size() > 0) {
+
+					cout << "Enter product id to Add this product to cart\nEnter 0 to cancel search" << endl;
+					cin >> ch;
+					int quantity;
+
+					for (int i = 0; i < searchProducts.size(); i++) {
+						if (searchProducts[i].id == ch) {
+							cout << "Please Enter Quantity" << endl;
+							cin >> quantity;
+							addProductToCart(searchProducts[i], quantity);
+
+						}
 					}
+				}
+				else {
+					ch = 0;
 				}
 			} while (ch != 0);
 
@@ -124,18 +134,21 @@ void Customer::Order_Screen() {
 		else if (choice == 2) {
 			deque<product_type> searchProducts = browseByCategory();
 			do {
-				cout << "Enter product id to Add this product to cart\nEnter 0 to cancel search" << endl;
-				cin >> ch;
-				int quantity;
+				if (searchProducts.size() > 0) {
+					cout << "Enter product id to Add this product to cart\nEnter 0 to cancel search" << endl;
+					cin >> ch;
+					int quantity;
 
-				for (int i = 0; i < searchProducts.size(); i++) {
-					if (searchProducts[i].id == ch) {
-						cout << "Please Enter Quantity" << endl;
-						cin >> quantity;
-						addProductToCart(searchProducts[i], quantity);
+					for (int i = 0; i < searchProducts.size(); i++) {
+						if (searchProducts[i].id == ch) {
+							cout << "Please Enter Quantity" << endl;
+							cin >> quantity;
+							addProductToCart(searchProducts[i], quantity);
 
+						}
 					}
 				}
+				
 			} while (ch != 0);
 		}
 		else if (choice == 3) {
