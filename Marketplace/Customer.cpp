@@ -80,6 +80,7 @@ void Customer::viewCart()
 			return;
 		}
 	}
+	
 	mycart.displayTotalPrice();
 }
 
