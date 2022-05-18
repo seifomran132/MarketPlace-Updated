@@ -132,6 +132,7 @@ product_type seller::addingProduct()
  }
  void seller::showOrder()
  {
+	
 	 if (!orders.empty())
 	 {
 
@@ -144,7 +145,7 @@ product_type seller::addingProduct()
 			 cout << "customer name :" << orders[i].name << endl;
 			 cout << "customer adress :" << orders[i].address << endl;
 			 cout << "customer phone :" << orders[i].phone << endl;
-				for (int j = 0; j < orders[i].products.size(); j++)
+				for (int j = 0; j <orders[i].products.size(); j++)
 				{
 				 cout << "product ID :" << orders[i].products[j].cart_products.id << endl;
 				 cout << "product name :" << orders[i].products[j].cart_products.name << endl;
@@ -160,6 +161,7 @@ product_type seller::addingProduct()
 	 else
 	 {
 		 cout << "Sorry there is no Ordders yet" << endl;
+		 
 	 }
  }
  void seller::sellerScreen() {

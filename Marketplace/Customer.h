@@ -15,7 +15,6 @@ class Customer :public user
 	string phone;
 	product myProduct;
 
-
 public:
 	cart mycart;
 	Customer(string name, string email, string password, string address, string phone);

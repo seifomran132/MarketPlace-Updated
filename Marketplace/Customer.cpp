@@ -1,4 +1,6 @@
 #include "Customer.h"
+#include<iostream>
+using namespace std;
 Customer::Customer(string name, string email, string password, string address, string phone)
 	:user(name, email, password)
 {
@@ -78,6 +80,7 @@ void Customer::viewCart()
 			return;
 		}
 	}
+	mycart.displayTotalPrice();
 }
 
 void Customer::confirmOrder() {
@@ -95,7 +98,6 @@ void Customer::Order_Screen() {
 		cout << "2 - Search for a product by category.\n";
 		cout << "3 - View or Confirm Cart.\n";
 		cout << "4 - Sign Out.\n";
-
 		cout << endl;
 
 		int choice;

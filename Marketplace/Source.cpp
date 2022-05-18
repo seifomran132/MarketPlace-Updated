@@ -16,12 +16,12 @@ int main() {
 
 
 	Globals glob = Globals();
-	seller loggedSeller = seller("","","");
-	Customer loggedCustomer = Customer("", "", "", "", "");
+	seller loggedSeller = seller("s","s@.","1");
+	Customer loggedCustomer = Customer("c", "c@.", "1", "c", "2");
 	
-
 	int enterChois;
 	do {
+		
 		cout << "Enter 1 for Register\nEnter 2 for Login\n" << endl;
 		cin >> enterChois;
 
@@ -62,7 +62,7 @@ int main() {
 					
 				 }
 				 else {
-				 	cout << "**********Login Failed**********" << endl;
+				 	cout << "\n**********Login Failed**********" << endl;
 
 				 }
 			}

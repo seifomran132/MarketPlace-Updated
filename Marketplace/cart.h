@@ -2,6 +2,7 @@
 #include <vector>
 #include "product.h"
 
+
 struct cart_type {
 	product_type cart_products;
 	int ordered_quantity;
