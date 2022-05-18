@@ -56,7 +56,11 @@ void Customer::addProductToCart(product_type p, int q)
 void Customer::viewCart()
 {
 	for (int i = 0; i < mycart.prod.size(); i++) {
-		cout << "Item " << i + 1 << " " << mycart.prod[i].cart_products.name << endl;
+		cout << "-------- " << "Item " << i + 1 << "--------" << endl;
+		cout << "ID " << mycart.prod[i].cart_products.id << endl;
+		cout << "Name " << mycart.prod[i].cart_products.name << endl;
+		cout << "Price "  << mycart.prod[i].cart_products.price << endl;
+
 	}
 	if (!mycart.prod.empty()) {
 		int c;
