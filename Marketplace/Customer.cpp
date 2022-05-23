@@ -97,7 +97,7 @@ void Customer::confirmOrder() {
 
 void Customer::Order_Screen() {
 
-	viewProduct();
+	
 	cout << endl;
 	int ch;
 	do {
@@ -105,7 +105,8 @@ void Customer::Order_Screen() {
 		cout << "1 - Search for a product by name.\n";
 		cout << "2 - Search for a product by category.\n";
 		cout << "3 - View or Confirm Cart.\n";
-		cout << "4 - Sign Out.\n";
+		cout << "4 - View all products\n";
+		cout << "5 - Sign Out.\n";
 		cout << endl;
 
 		int choice;
@@ -158,6 +159,9 @@ void Customer::Order_Screen() {
 			viewCart();
 		}
 		else if (choice == 4) {
+			viewProduct();
+		}
+		else if (choice == 5) {
 			break;
 		}
 		cout << "Enter 0 to back to menu\n";
@@ -166,13 +170,19 @@ void Customer::Order_Screen() {
 }
 void Customer::viewProduct()
 {
-
-	for (int i = 0; i < view.prod.size(); i++)
+	if (!view.prod.empty())
 	{
-		cout << "product ID :" <<view.prod[i].id << endl;
-		cout << "product name :" << view.prod[i].name << endl;
-		cout << "product category :" << view.prod[i].category << endl;
-		cout << "product price :" << view.prod[i].price << endl;
-		cout << "product quentity :" << view.prod[i].quantity << endl;
+		for (int i = 0; i < view.prod.size(); i++)
+		{
+			cout << "product ID :" << view.prod[i].id << endl;
+			cout << "product name :" << view.prod[i].name << endl;
+			cout << "product category :" << view.prod[i].category << endl;
+			cout << "product price :" << view.prod[i].price << endl;
+			cout << "product quentity :" << view.prod[i].quantity << endl;
+		}
+	}
+	else
+	{
+		cout << "no products yet" << endl;
 	}
 }
