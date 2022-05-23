@@ -18,6 +18,6 @@ public:
 	void addToCart(cart_type);
 	void displayTotalPrice();
 	bool removeFromCart(int removed_id);
-	bool updateQuantity(int id, int q);//<--
+	bool updateQuantity(int id, int q);
 	void promoPrice(string promocode);
 };

@@ -1,30 +1,27 @@
 #include <iostream>
+#include <Windows.h> 
 #include <string>
 #include <vector>
 #include "auth.h"
 #include "login.cpp"
 #include "Globals.h";
 #include "Customer.h"
-
+#include <iomanip>
 using namespace std;
-
 static vector<Customer> customers;
 
-
-
 int main() {
-
-
+	system("color 0A");
+	
 	Globals glob = Globals();
 	seller loggedSeller = seller("s","s@.","1");
 	Customer loggedCustomer = Customer("c", "c@.", "1", "c", "2");
 	
 	int enterChois;
 	do {
-		
+		std::cout.width(65); std::cout << std::right <<"ON THE MARKET" << '\n';
 		cout << "Enter 1 for Register\nEnter 2 for Login\n" << endl;
 		cin >> enterChois;
-
 		if (enterChois == 1) {
 			cout << "Do you want to register as Customer or Seller\nEnter 1 for Customer\nEnter 2 for Seller\nEnter 3 for back" << endl;
 			cin >> enterChois;
