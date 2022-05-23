@@ -59,8 +59,8 @@ deque<product_type> product::searchByCategory(string searched_category){
 			cout << "---------------------------------------------------" << endl;
 
 			found = true;
-			i++;
 		}
+		i++;
 	}
 	if (!found) {
 		cout << "sorry not found this category \n";

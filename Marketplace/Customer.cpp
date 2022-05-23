@@ -55,7 +55,9 @@ void Customer::addProductToCart(product_type p, int q)
 
 void Customer::viewCart()
 {
-	
+	if (mycart.prod.empty()) {
+		cout << "Cart is Empty" << endl;
+	}
 	mycart.displayTotalPrice();
 
 	if (!mycart.prod.empty()) {
