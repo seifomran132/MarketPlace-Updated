@@ -17,6 +17,7 @@ class Customer :public user
 
 public:
 	cart mycart;
+	product view;
 	Customer(string name, string email, string password, string address, string phone);
 	Customer(string name, string email, string password);
 	deque<product_type> browseByCategory();
@@ -24,6 +25,7 @@ public:
 	void addProductToCart(product_type p, int q);
 	void viewCart();
 	void confirmOrder();
+	void viewProduct();
 	void Order_Screen();
 };
 

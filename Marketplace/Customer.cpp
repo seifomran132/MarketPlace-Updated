@@ -96,8 +96,10 @@ void Customer::confirmOrder() {
 
 
 void Customer::Order_Screen() {
-	int ch;
 
+	viewProduct();
+	cout << endl;
+	int ch;
 	do {
 		cout << endl;
 		cout << "1 - Search for a product by name.\n";
@@ -161,4 +163,16 @@ void Customer::Order_Screen() {
 		cout << "Enter 0 to back to menu\n";
 		cin >> ch;
 	} while (ch == 0);
+}
+void Customer::viewProduct()
+{
+
+	for (int i = 0; i < view.prod.size(); i++)
+	{
+		cout << "product ID :" <<view.prod[i].id << endl;
+		cout << "product name :" << view.prod[i].name << endl;
+		cout << "product category :" << view.prod[i].category << endl;
+		cout << "product price :" << view.prod[i].price << endl;
+		cout << "product quentity :" << view.prod[i].quantity << endl;
+	}
 }

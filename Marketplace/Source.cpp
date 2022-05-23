@@ -11,7 +11,7 @@ using namespace std;
 static vector<Customer> customers;
 
 int main() {
-	system("color 0A");
+	system("color 09");
 	
 	Globals glob = Globals();
 	seller loggedSeller = seller("s","s@.","1");
@@ -19,7 +19,7 @@ int main() {
 	
 	int enterChois;
 	do {
-		std::cout.width(65); std::cout << std::right <<"ON THE MARKET" << '\n';
+		std::cout.width(65); std::cout << std::right <<"**ON THE MARKET**"<< '\n';
 		cout << "Enter 1 for Register\nEnter 2 for Login\n" << endl;
 		cin >> enterChois;
 		if (enterChois == 1) {
