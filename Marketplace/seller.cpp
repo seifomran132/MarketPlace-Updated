@@ -1,20 +1,20 @@
 #include "seller.h"
 #include<string>
 #include <iostream>
+
 using namespace std;
-
-
 deque<OrderDetails> seller::orders;
 seller::seller(string name, string email, string password)
 	:user(name, email, password)
 {
 	
 }
-
-
 int seller::prod_id = 0;
 product_type seller::addingProduct()
 {
+	auto start = std::chrono::system_clock::now();
+	auto legacyStart = std::chrono::system_clock::to_time_t(start);
+	ctime_s(sel.tmBuff, sizeof(sel.tmBuff), &legacyStart);
 
 	sel.seller_id = this->id;
 	sel.id = ++prod_id;
@@ -171,8 +171,9 @@ product_type seller::addingProduct()
 		 cout << "1 - Add New Product.\n";
 		 cout << "2 - Delete Product.\n";
 		 cout << "3 - Update Product.\n";
-		 cout << "4 - Show Existing Orders.\n";
-		 cout << "5 - Sign Out.\n";
+		 cout << "4 - Show Existing products.\n";
+		 cout << "5 - Show Existing Orders.\n";
+		 cout << "6 - Sign Out.\n";
 
 
 		 cout << endl;
@@ -192,9 +193,12 @@ product_type seller::addingProduct()
 			 UpdateProduct(update_id);
 		 }
 		 else if (choice == 4) {
-			 showOrder();
+			 pro.viewProduct();
 		 }
 		 else if (choice == 5) {
+			 showOrder();
+		 }
+		 else if (choice == 6) {
 			 break;
 		 }
 		 cout << "Enter 0 to back to menu\n";

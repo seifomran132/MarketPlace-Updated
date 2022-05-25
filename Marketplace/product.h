@@ -2,7 +2,8 @@
 #include <string>
 #include <vector>
 #include <deque>
-
+#include <chrono>
+#include<ctime>
 using namespace std;
 
 
@@ -13,7 +14,7 @@ struct product_type {
 	string category;
 	int quantity;
 	int seller_id;
-
+	char tmBuff[30];
 };
 
 class product
@@ -29,7 +30,7 @@ class product
 		void delete_products(int deleted_id);
 		deque<product_type> searchByCategory(string searched_category);
 		deque<product_type> searchByName(string searched_name);
-
+		void viewProduct();
 		
 
 };

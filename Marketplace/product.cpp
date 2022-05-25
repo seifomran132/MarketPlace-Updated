@@ -99,3 +99,25 @@ deque<product_type> product::searchByName(string searched_name) {
 		return searched_que;
 	}
 }
+void product::viewProduct()
+{
+	if (!prod.empty())
+	{
+		for (int i = 0; i < prod.size(); i++)
+		{
+			cout << "---------------------------------------";
+			cout << "Creation time :" << prod[i].tmBuff << endl;
+			cout << "Product ID :" << prod[i].id << endl;
+			cout << "product name :" << prod[i].name << endl;
+			cout << "product category :" << prod[i].category << endl;
+			cout << "product price :" << prod[i].price << endl;
+			cout << "product quentity :" << prod[i].quantity << endl;
+			cout << "---------------------------------------\n";
+
+		}
+	}
+	else
+	{
+		cout << "Sorry no products yet" << endl;
+	}
+}

@@ -174,15 +174,18 @@ void Customer::viewProduct()
 	{
 		for (int i = 0; i < view.prod.size(); i++)
 		{
+			cout << "---------------------------------------" << endl;
 			cout << "product ID :" << view.prod[i].id << endl;
 			cout << "product name :" << view.prod[i].name << endl;
 			cout << "product category :" << view.prod[i].category << endl;
 			cout << "product price :" << view.prod[i].price << endl;
 			cout << "product quentity :" << view.prod[i].quantity << endl;
+			cout << "---------------------------------------\n";
+
 		}
 	}
 	else
 	{
-		cout << "no products yet" << endl;
+		cout << "Sorry no products yet" << endl;
 	}
 }
